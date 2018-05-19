@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
-// const hostname = '127.0.0.1';
+const hostname = '127.0.0.1';
 const todoRoutes = require('./routes/todos');
 const bodyParser = require('body-parser');
 

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const config = require('../config');
 mongoose.set('debug', true);
-mongoose.connect('mongodb://admin:1234567@ds023475.mlab.com:23475/todo-db');
+mongoose.connect(config.dbHost);
 
 
 mongoose.Promise = Promise;
