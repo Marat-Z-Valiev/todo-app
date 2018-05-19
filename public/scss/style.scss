@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css?family=Itim");
+//Variables
+$color: rgb(104,
+166,
+212);
+$main-font: 'Itim',
+cursive,
+serif;
+body {
+    font-family: $main-font;
+    background: url("../images/bg.jpg") no-repeat fixed center center;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+header {
+    color: #F4F4F4;
+    text-align: center;
+}
+
+.input-field {
+    display: flex;
+    justify-content: center;
+    input[type="search"] {
+        width: 300px;
+        border-radius: 5px;
+        font-family: $main-font;
+        font-size: 1em;
+    }
+    button {
+        font-size: 18px;
+        border-radius: 5px;
+        background-color: $color;
+        border: $color;
+        height: 35px;
+        margin-left: 5px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.todo-list {
+    max-width: 395px;
+    height: 80vh;
+    margin: 0 auto;
+    margin-top: 20px;
+    .item {
+        display: flex;
+        align-items: center;
+        background-color: $color;
+        border: 2px solid rgb(0, 0, 0);
+        border-bottom: 0;
+        border-radius: 5px;
+        &:hover {
+            cursor: pointer;
+        }
+        &:hover .delete-icon {
+            opacity: 1;
+            cursor: pointer;
+        }
+        &:last-child {
+            border-bottom: 2px solid rgb(0, 0, 0);
+        }
+        p {
+            margin: 0;
+            padding: 20px;
+            transition: background 0.2s;
+            flex: 1;
+            font-family: $main-font;
+            font-size: 18px;
+            font-weight: 200;
+            color: rgb(0, 0, 0);
+        }
+        span {
+            .delete-icon {
+                width: 20px;
+                padding-right: 20px;
+                margin-left: 15px;
+                opacity: 0;
+            }
+        }
+    }
+    :first-child {
+        margin-top: 10px;
+    }
+    .completed {
+        background-color: #3578ab;
+        p {
+            text-decoration: line-through;
+        }
+        span {
+            background-color: #3578ab;
+        }
+    }
+}
+
+//Responsive design
+@media screen and (max-width: 360px) {
+    h2 {
+        font-size: 1.2em;
+    }
+    .input-field {
+        input[type="search"] {
+            width: 230px;
+            height: 35px;
+        }
+    }
+    .todo-list {
+        .item {
+            .hidden {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .todo-list {
+        .item {
+            .hidden {
+                display: inline-block;
+            }
+        }
+    }
+}
